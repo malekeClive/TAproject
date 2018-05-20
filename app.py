@@ -358,6 +358,9 @@ def recognize():
             return error_handle("Sorry we can not found any people matched with your face image, try another image")
         return ('tidak ada data wajah')
 
+@app.route('/absenPulang', methhods=['GET', 'POST'])
+def absensiPulang():
+    print("on going")
 
 # Run the app
 if __name__ == '__main__':
