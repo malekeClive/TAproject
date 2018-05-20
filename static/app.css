@@ -1,0 +1,42 @@
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.message .success {
+    padding: 10px;
+    border: 1px solid #00e640;
+    color: #00e640;
+}
+
+.message .error {
+    padding: 10px;
+    border: 1px solid #CF000F;
+}
+
+form .description {
+    font-size: 12px;
+}
+
+.form-item {
+    margin-bottom: 15px;
+}
+
+.form-item label {
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.86);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.form-item input[type="text"] {
+    padding: 5px 10px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.form-action button {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 8px 15px;
+    background: #fff;
+}

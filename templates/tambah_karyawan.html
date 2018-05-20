@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h1>Register Page</h1>
+    {% from "/includes/_formhelpers.html" import render_field %}
+    <form action="" method="POST" id="tambah">
+        <div class="form-item">
+            <label>name</label>
+            <input id="name-field" name="name" value="" type="text" placeholder="name"/>
+        </div>
+        <div class="form-item">
+            <label>telpon</label>
+            <input id="telpon-field" name="telpon" value="" type="text" placeholder="telp"/>
+        </div>
+        <div class="form-item">
+            <label>alamat</label>
+            <input id="alamat-field" name="alamat" value="" type="text" placeholder="alamat"/>
+        </div>
+        <div class="form-item">
+            <label for="input-file">Face image</label>
+            <input type="file" name="file" id="input-file" accept="image/*"/>
+        </div>                                             
+        <div class="form-action">
+            <button type="submit">Tambah</button>
+        </div>
+    </form>
+{% endblock %}

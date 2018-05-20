@@ -1,0 +1,311 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+/* body {
+  background-color: #f4f4f4 !important;
+  font-family: "Lato", sans-serif;
+  height: 100vh;
+} */
+
+.dashboard-absensi {
+  margin: auto;
+  width: 50%;
+}
+
+/* dashboard absensi */
+.absensi-jdl {
+  font-family: "Lato", sans-serif;
+  color: #ededed;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 25pt;
+  padding-top: 15%;
+}
+
+.absensi-btn-layout {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.btn-absensi {
+  font-family: "Lato", sans-serif;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20pt;
+  color: #ff5959;
+}
+
+.menu-dtl {
+  padding: 1em;
+  border: 1px #ededed;  
+  background-color: #ededed;
+}
+
+.dashboard-isi {
+  padding: 1em;  
+  margin-top: 1em;
+  border: 1px solid #ededed;  
+  background-color: #ededed;
+}
+
+/* absensi masuk */
+.absensi-masuk-jdl {
+  font-family: "Lato", sans-serif;
+  color: #ededed;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 15pt;
+}
+
+.isi {
+  padding: 2% 5% 35% 20%;
+}
+
+.camera-view {
+  border: 1px solid #ededed;
+  border-radius: 7px;
+  background: #ededed;
+  width: 35%;
+}
+
+.camera-view p {
+  text-align: center;
+}
+
+.sisi-kanan {
+  float: right;
+  border: 1px solid #ededed;
+}
+
+.tbl-absensi td {
+  padding: 10px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+}
+
+/* dashboard */
+.logo {
+  position: fixed;
+  z-index: 1;
+  background-color: #ff5959;
+  top: 0;
+  left: 0;
+  width: 225px;
+}
+
+.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 35px;
+  overflow: hidden;
+  background-color: #ff9b9b;
+}
+
+#logout {
+  display: block;
+  font-family: "Lato", sans-serif;
+  float: right;
+  text-decoration: none;
+}
+
+.jdl {
+  padding: 3px 3px 3px 32px;
+}
+
+.main-mn {
+  padding-top: 120px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 15%;
+  background-color: #ffdede;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.side-form ul li a {
+  display: block;
+  color: #3a3a3a;
+  padding: 8px 20%;
+  text-decoration: none;
+}
+
+.side-form ul li a.active {
+  margin-top: 50%;
+  /* background-color: #ff5959; */
+}
+
+/* login */
+
+#formContent {
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  background: #fff;
+  padding: 30px;
+  width: 90%;
+  max-width: 450px;
+  position: relative;
+  padding: 0px;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+input {
+  background-color: #ededed;
+  border: none;
+  color: #262626;
+  padding: 15px 100px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  margin: 5px 20px 40px 20px;
+}
+
+input.txt {
+  padding-left: 10px;
+}
+
+input.btn {
+  background-color: #ff5959;
+  padding: 10px 30px 10px 30px;
+}
+
+/* admin */
+.form-isi {
+  background-color: white;
+  margin: 10px;
+  padding: 1px 15px;
+}
+
+.tbl {
+  background-color: white;
+  margin: 10px;
+  padding: 15px;
+}
+
+.tbl-atas {
+  padding-bottom: 30px;
+}
+
+.btn-edit {
+  float: right;
+}
+
+.btn-isi {
+  background-color: #ff5959;
+  padding: 10px 30px;
+  margin: 0px;
+}
+
+.img-edit {
+  background-color: thistle;
+}
+
+/* Absensi Masuk */
+
+.absensi-container {
+  display: flex;
+  flex-direction: row;
+  padding: 2em;
+}
+
+.camera {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 55%;
+  background: white;
+  margin-right: 4em;
+  padding: 1em;
+  border-radius: 1em;
+}
+
+.video-container {
+  /* flex: 5; */
+  height: 80%;
+  width: 100%;
+  background: burlywood;
+  margin-bottom: 1em;
+}
+
+.video-container video {
+  align-content: center;
+}
+
+.buttons-container {
+  flex:1;
+  height: 20%;
+  width: 100%;
+  background: burlywood;
+}
+
+.info {
+  display: flex;
+  height: 400px;
+  width: 45%;
+  border-radius: 1em;
+  flex-direction: column;
+}
+
+.jam {
+  height: 120px;
+  width: 100%;
+  background: white;
+  border-radius: 1em;
+  margin-bottom: 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+
+.jam p {
+  align-self: center;
+  font-family: "Lato", sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  color: #ff5959;
+}
+
+.preview {
+  height: 100%;
+  width: 100%;
+  background: white;
+  border-radius: 1em;
+}
+
+.side-form ul li:hover {
+  background: #ff5959;
+  transition: linear all 0.20s;
+  margin-left: 10px;
+}
+
+.side-form ul li a:hover {
+  color: #ededed;
+}
+
+.side-form ul li a {
+  font-size: 13px;
+  font-family: "Lato", sans-serif;
+  font-weight: bold;  
+}
+
+.container-edit-karyawan {
+  display: flex;
+  padding-left: 20%;
+}

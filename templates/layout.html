@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>test absensi</title>
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery-3.3.1.min.js') }}"></script>
+    <!-- <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='lodash.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='immutable.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='axios.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+</head>
+
+<body bgcolor="#f4f4f4">
+    {% include 'includes/_messages.html' %}
+    <div class="logo">
+        <div class="jdl">
+            <h1>ABSENKU</h1>
+        </div>
+    </div>
+    <div class="side-form">
+        <ul>
+            <li>
+                <a class="active" href="{{ url_for('dashboard') }}">Dashboard</a>
+            </li>
+            <li>
+                <a href="#">Kelola Absensi</a>
+            </li>
+            <li>
+                <a href="{{ url_for('dataKaryawan') }}">Kelola Karyawan</a>
+            </li>
+            <li>
+                <a href="#">Admin</a>
+            </li>
+        </ul>
+    </div>
+    <div class="topnav">
+        <span id="logout"><a href="/logout">Logout</a></span>
+    </div>
+    <div class="isi">
+        {% block body %}{% endblock %}
+    </div>
+</body>
+
+</html>
