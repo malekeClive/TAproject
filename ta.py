@@ -29,7 +29,22 @@ class Database:
 
         return results
 
+    def lihat_absensi(self, q, arg=()):
+        cursor = self.connection.cursor()
+
+        cursor.execute(q, arg)
+        results = cursor.fetchone()
+
+        return results
+
     def simpan_edit_karyawan(self, q, arg=()):
+        cursor = self.connection.cursor()
+        result = cursor.execute(q, arg)
+        self.connection.commit()
+        cursor.close()
+        return result
+
+    def update_absensi(self, q, arg=()):
         cursor = self.connection.cursor()
         result = cursor.execute(q, arg)
         self.connection.commit()

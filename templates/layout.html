@@ -3,9 +3,17 @@
 
 <head>
     <title>test absensi</title>
-    <script type="text/javascript" src="{{ url_for('static', filename='jquery-3.3.1.min.js') }}"></script>
-    <!-- <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <!-- CSS -->
+    <link type="text/css" rel="stylesheet" media="screen" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fontawesome-free-5.1.0-web/css/solid.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fontawesome-free-5.1.0-web/css/fontawesome.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='datatable/DataTables-1.10.18/css/dataTables.bootstrap.min.css') }}">
+    <!-- JS -->
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='datatable/DataTables-1.10.18/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='datatable/DataTables-1.10.18/js/dataTables.bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='lodash.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='immutable.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='axios.js') }}"></script>
@@ -13,34 +21,70 @@
     <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
 </head>
 
-<body bgcolor="#f4f4f4">
+<body>
     {% include 'includes/_messages.html' %}
-    <div class="logo">
-        <div class="jdl">
-            <h1>ABSENKU</h1>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>TEST</h3>
+                <strong>BS</strong>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="{{ url_for('dashboard') }}">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('dataAbsensi') }}">
+                        <i class="fas fa-briefcase"></i>
+                        Kelola Absensi
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('dataKaryawan') }}">
+                        <i class="fas fa-image"></i>
+                        Kelola Karyawan
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('dataAdmin') }}">
+                        <i class="fas fa-question"></i>
+                        Admin
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-paper-plane"></i>
+                        Help
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled CTAs">
+                <li class="fas fa-trash-left">
+                    <span><a href="/logout">Logout</a></span>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+                </div>
+            </nav>
+            {% block body %}{% endblock %}        
         </div>
-    </div>
-    <div class="side-form">
-        <ul>
-            <li>
-                <a class="active" href="{{ url_for('dashboard') }}">Dashboard</a>
-            </li>
-            <li>
-                <a href="#">Kelola Absensi</a>
-            </li>
-            <li>
-                <a href="{{ url_for('dataKaryawan') }}">Kelola Karyawan</a>
-            </li>
-            <li>
-                <a href="#">Admin</a>
-            </li>
-        </ul>
-    </div>
-    <div class="topnav">
-        <span id="logout"><a href="/logout">Logout</a></span>
-    </div>
-    <div class="isi">
-        {% block body %}{% endblock %}
     </div>
 </body>
 

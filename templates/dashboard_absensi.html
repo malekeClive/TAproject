@@ -1,5 +1,4 @@
-{% include 'absensi-layout.html' %} 
-{% block body %}
+{% include 'absensi-layout.html' %} {% block body %}
 <div class="dashboard-absensi">
     <div class="absensi-jdl">
         <div id="hello-btn">
@@ -11,12 +10,9 @@
 <div class="absensi-btn-layout">
     <tr>
         <td>
-            <form action="{{ url_for('recognize') }}" method="GET">
-                <input class="btn-absensi" type="submit" value="ABSEN MASUK">        
+            <form action="{{ url_for('absen') }}" method="GET">
+                <input class="btn-absensi" type="submit" value="ABSEN KELUAR">
             </form>
-        </td>
-        <td>
-            <input class="btn-absensi" type="submit" value="ABSEN KELUAR">
         </td>
     </tr>
 </div>

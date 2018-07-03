@@ -1,0 +1,11 @@
+{% extends 'layout.html' %} 
+{% block body %}
+<h1>edit admin</h1>
+{% from "/includes/_formhelpers.html" import render_field %}
+<form action="" method="post">
+    <dl>
+        {{ render_field(form.oldPassword) }}
+        {{ render_field(form.newPassword) }}
+    </dl>
+</form>
+{% endblock %}

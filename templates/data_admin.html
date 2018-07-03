@@ -1,0 +1,14 @@
+{% extends 'layout.html' %} 
+{% block body %}
+<div class="card text-center" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">test</h5>
+      <p class="card-text">{{session.username}}</p>
+        <dl>
+            <!-- <form action="{{ url_for('edit_user_karyawan', user_id=item[0]) }}" method="GET">
+                <input type="submit" value="Edit" class="btn btn-warning btn-sm">
+            </form> -->
+        </dl>
+    </div>
+</div>
+{% endblock %}

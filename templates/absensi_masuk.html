@@ -2,31 +2,8 @@
 <div class="container-fluid">
 	<div class="absensi-masuk-jdl">
 		<h1>ABSENSI JAM MASUK</h1>
+		{% include 'includes/_messages.html' %}
 	</div>
-	<!-- <div class="tbl-absensi">
-		<div class="camera-view">
-			<p>camera view</p>
-			<video width="400" height="400" autoplay></video>
-		</div>
-
-		<div class="sisi-kanan">
-			<table>
-				<tr>
-					<td>
-						<div class="clock-view">
-							<h1>clock</h1>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<div class="tbl-detail">
-						<p>test</p>
-					</div>
-				</tr>
-			</table>
-		</div>
-	</div> -->
-
 
 	<div class="absensi-container">
 		<div class="camera">
@@ -46,7 +23,36 @@
 			<div class="jam">
 				<p id="jam"></p>
 			</div>
-			<div class="preview"></div>
+			<div class="preview">
+				<table class="table table-striped table-bordered table-hover" id="mydata">
+					<thead>
+						<tr>
+							<th>Nama</th>
+							<th>Status Masuk</th>
+							<th>Status Pulang</th>
+							<th>Keterangan</th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr>
+							<th>Nama</th>
+							<th>Status Masuk</th>
+							<th>Status Pulang</th>
+							<th>Keterangan</th>
+						</tr>
+					</tfoot>
+					<tbody>
+						{% for item in views %}
+						<tr>
+							<td>{{item[2]}}</td>
+							<td>{{item[6]}}</td>
+							<td>{{item[7]}}</td>
+							<td>{{item[5]}}</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
 
 		</div>
 

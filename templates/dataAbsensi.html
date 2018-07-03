@@ -1,0 +1,55 @@
+{% extends 'layout.html' %} 
+{% block body %}
+<div class="card">
+    <div class="card-header">
+        Kelola Absensi
+        <!-- <span id="tambah-karyawan">
+                <form action="{{ url_for('tambahKaryawan') }}" method="GET">
+                    <input type="submit" value="Tambah Karyawan" class="btn btn-primary">
+                </form>
+        </span> -->
+    </div>
+    <div class="card-body">
+            <table class="table table-striped table-bordered table-hover" id="mydata">
+                    <thead>
+                        <tr>
+                            <th>ID Karyawan</th>
+                            <th>Nama</th>
+                            <th>Tanggal Absen</th>
+                            <th>Jam Masuk</th>
+                            <th>Status Masuk</th>
+                            <th>Jam Pulang</th>
+                            <th>Status Pulang</th>
+                            <th>Keterangan</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>ID Karyawan</th>
+                            <th>Nama</th>
+                            <th>Tanggal Absen</th>
+                            <th>Jam Masuk</th>
+                            <th>Status Masuk</th>
+                            <th>Jam Pulang</th>
+                            <th>Status Pulang</th>
+                            <th>Keterangan</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                {% for item in views %}
+                <tr>
+                    <td>{{item[8]}}</td>
+                    <td>{{item[2]}}</td>
+                    <td>{{item[1]}}</td>
+                    <td>{{item[3]}}</td>                
+                    <td>{{item[6]}}</td>                
+                    <td>{{item[4]}}</td>                
+                    <td>{{item[7]}}</td>                
+                    <td>{{item[5]}}</td>                
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

@@ -1,5 +1,6 @@
 import face_recognition
 from os import path
+from PIL import Image
 
 
 class Face:
@@ -46,6 +47,7 @@ class Face:
             self.faces.append(face)
 
             face_image = face_recognition.load_image_file(self.load_train_file_by_name(filename))
+            # print(face_recognition.face_encodings(face_image))
             face_image_encoding = face_recognition.face_encodings(face_image)[0]
             index_key = len(self.known_encoding_faces)
             self.known_encoding_faces.append(face_image_encoding)
@@ -53,22 +55,35 @@ class Face:
             self.face_user_keys['{0}'.format(index_key_string)] = user_id
 
     def recognize(self, unknown_filename):
-        unknown_image = face_recognition.load_image_file(self.load_unknown_file_by_name(unknown_filename))
-        unknown_encoding_image = face_recognition.face_encodings(unknown_image)[0]
-
-        results = face_recognition.compare_faces(self.known_encoding_faces, unknown_encoding_image)
-
-        print("results", results)
-
+        face_ids = []
+        image = face_recognition.load_image_file(self.load_unknown_file_by_name(unknown_filename))
+        face_locations = face_recognition.face_locations(image)
+        encoding_image = face_recognition.face_encodings(image, face_locations)
         index_key = 0
-        for matched in results:
-
-            if matched:
-                # so we found this user with index key and find him
+        
+        for i in encoding_image:
+            results = face_recognition.compare_faces(self.known_encoding_faces, i)
+            id = "unknown"
+            if True in results:
                 user_id = self.load_user_by_index_key(index_key)
-
-                return user_id
-
+                id = user_id
+                print(user_id)
+                #return user_id
+            face_ids.append(id)
+            return face_ids
+        
             index_key = index_key + 1
-
         return None
+
+        # index_key = 0
+        # for matched in results:
+
+        #     if matched:
+        #         # so we found this user with index key and find him
+        #         user_id = self.load_user_by_index_key(index_key)
+
+        #         return user_id
+
+        #     index_key = index_key + 1
+
+        # return None
