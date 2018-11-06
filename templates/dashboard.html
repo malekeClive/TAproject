@@ -1,9 +1,43 @@
-{% extends 'layout.html' %} 
-{% block body %}
-<div class="menu-dtl">
-    <h1> dashboard</h1>
+{% extends 'layout.html' %} {% block body %}
+<div class="card-1">
+  <div class="tst">
+    <div class="card-custom">
+      <i class="fas fa-home" style="font-size: 5em;"></i>
+      <h5>DASHBOARD</h5>
+      <b>Sistem Absensi Face Recognition</b>
+    </div>
+    <a href="{{ url_for('dataAbsensi') }}">
+      <div class="card-custom">
+        <i class="fas fa-file" style="font-size: 5em;"></i>
+        <h5>ABSENSI</h5>
+        <b>Jumlah Absen hari ini : {{views_abs}} orang</b> <hr>
+        <b>{{views_sisa}} orang lainnnya belum mengambil absensi</b>
+      </div>
+    </a>
+  </div>
+  <div class="tst">
+    <a href="{{ url_for('karyawanData') }}">
+      <div class="card-custom">
+        <i class="fas fa-users" style="font-size: 5em;"></i>
+        <h5>KARYAWAN</h5>
+        <b>Jumlah Karyawan : {{views_kar}}</b>
+      </div>
+    </a>
+    <a href="{{ url_for('dataAdmin') }}">
+      <div class="card-custom">
+        <div class="admin-pad">
+          <i class="fas fa-user-circle" style="font-size: 5em;"></i>
+          <h5>ADMIN</h5>
+          <b>{{session.username}}</b>
+        </div>
+      </div>
+    </a>
+  </div>
 </div>
-<div class="dashboard-isi">
-    <p>HALLO! {{session.username}}</p>
-</div>
+
+<!-- <div class="card-custom">
+    <h5 class="card-title">test</h5>
+    <p class="card-text">{{session.username}}</p>
+    <a href="#" class="btn btn-primary">KELOLA ABSENSI</a>
+  </div> -->
 {% endblock %}

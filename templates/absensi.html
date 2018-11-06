@@ -1,0 +1,44 @@
+{% extends 'absensi-layout.html' %} {% block body %}
+<div class="container-fluid">
+	<div class="absensi-container">
+		<div class="camera">
+			<div class="video-container">
+				<video src="" id="video"></video>
+				<img id="snap">
+				<!-- hidden canvas -->
+				<canvas id="canvas"></canvas>
+			</div>
+			<div class="buttons-container">
+				<button id="c-masuk" class="b-absensi" type="submit">Absen Masuk</button>
+				<button id="c-pulang" class="b-absensi" type="submit">Absen Pulang</button>
+				<a href="#" id="repeat" title="reload" class="disabled"><i class="fas fa-redo-alt"></i></a>
+			</div>
+		</div>
+
+		<div class="info">
+
+			<div class="jam">
+				<p id="jam"></p>
+			</div>
+			<div class="preview">
+			<div style="width:317; height:286px; overflow:auto;">
+				<table class="table table-striped table-bordered table-hover" id="preview-absen">
+					<thead>
+						<tr>
+							<th>Nama</th>
+							<th>Status Masuk</th>
+							<th>Status Pulang</th>
+							<th>Keterangan</th>
+						</tr>
+					</thead>
+					<tbody id="data">
+					</tbody>
+				</table>
+			</div>
+			</div>
+
+		</div>
+
+	</div>
+</div>
+{% endblock %}

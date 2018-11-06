@@ -9,7 +9,7 @@ db = path.join(getcwd(), 'database.db')
 class Database:
 
     def __init__(self):
-        self.connection = sqlite3.connect(db)
+        self.connection = sqlite3.connect(db, check_same_thread=False)
 
     def query(self, q, arg=()):
         cursor = self.connection.cursor()
@@ -29,12 +29,27 @@ class Database:
 
         return results
 
+    def lihat_absensi(self, q, arg=()):
+        cursor = self.connection.cursor()
+
+        cursor.execute(q, arg)
+        results = cursor.fetchone()
+
+        return results
+
     def simpan_edit_karyawan(self, q, arg=()):
         cursor = self.connection.cursor()
         result = cursor.execute(q, arg)
         self.connection.commit()
         cursor.close()
-        return result    
+        return result
+
+    def update_absensi(self, q, arg=()):
+        cursor = self.connection.cursor()
+        result = cursor.execute(q, arg)
+        self.connection.commit()
+        cursor.close()
+        return result
 
     def insert(self, q, arg=()):
         cursor = self.connection.cursor()
@@ -70,5 +85,12 @@ class Database:
         cursor = self.connection.cursor()
         cursor.execute(q, arg)        
         results = cursor.fetchone()
+        cursor.close()
+        return results
+
+    def cetak_laporan(self, q, arg=()):
+        cursor = self.connection.cursor()
+        cursor.execute(q, arg)        
+        results = cursor.fetchall()
         cursor.close()
         return results

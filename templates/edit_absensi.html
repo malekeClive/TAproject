@@ -1,0 +1,36 @@
+{% extends 'layout.html' %} 
+{% block body %} 
+{% from "/includes/_formhelpers.html" import render_field %}
+<div class="card">
+    <div class="card-header">
+        <span class="sub-title">
+            <b>Edit absensi</b>
+        </span>
+    </div>
+    <div class="card-body">
+        <form action="" method="POST">
+            <fieldset disabled="disabled">
+                <div class="form-group">
+                    {{ render_field(form.name ,class_="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ render_field(form.tanggalAbsen ,class_="form-control") }}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                <div class="input-group">
+                        <span class="input-group-addon">Please select</span>
+                        <select name="comp_select" class="selectpicker form-control">
+                        {% for o in data %}
+                        <option value="{{ o.name }}">{{ o.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <p>
+                <input type="submit" value="Submit" class="b-crud-tambah">
+            </p>
+        </form>
+    </div>
+</div>
+{% endblock %}

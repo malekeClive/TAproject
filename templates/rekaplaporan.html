@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    {% block body %}
+    <div class="card-pdf">
+        <div class="header-pdf">
+            <h1>REKAP DATA ABSENSI KARYAWAN BULAN/TAHUN {{views[0][9]}}</h1>
+        </div>
+        <div class="card-body-pdf">
+            <table class="table-pdf">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Nama</th>
+                        <th>jumlah absen</th>
+                        <th>tidak masuk</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for jmlh in hasil %}
+                    <tr>
+                        <td>{{jmlh["id"]}}</td>
+                        <td>{{jmlh["nama"]}}</td>
+                        <td>{{jmlh["jumlah absen"]}} hari</td>
+                        <td>{{jmlh["hasil"]}} hari</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+
+</html>

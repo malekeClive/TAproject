@@ -1,0 +1,12 @@
+function myTimer() {
+  var jamEl = document.getElementById("jam");
+  var btn = document.getElementById("c-pulang");
+  var d = new Date();
+  if(d.getHours() < 16 && d.getHours() > 8) {
+    btn.style.display = 'none';
+  } else {
+    btn.style.display = 'inline-block';
+  }
+
+  jamEl.innerHTML = d.toLocaleTimeString();
+}

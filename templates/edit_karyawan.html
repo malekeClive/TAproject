@@ -1,16 +1,26 @@
 {% extends 'layout.html' %} 
-
 {% block body %}
-    <h1>Edit Karyawan</h1>
-    {% from "/includes/_formhelpers.html" import render_field %}
-    <form action="" method="POST">
-        <div class="container-edit-karyawan">
-            <div class="form-group">{{ render_field(form.name ,class_="form-control") }}</div>
-            <div class="form-group">{{ render_field(form.telpon ,class_="form-control") }}</div>
-            <div class="form-group">{{ render_field(form.alamat ,class_="form-control") }}</div>
-            <p>
-                <input type="submit" value="Submit" class="btn btn-primary">
-            </p>
+{% from "/includes/_formhelpers.html" import render_field %}
+<div class="card-custom-edit">
+    <div class="card-header">
+        <span class="sub-title"><b>Edit Karyawan</b></span>
+    </div>
+    <div class="card-body-custom">
+        <div class="column-left">
+            <form action="" method="POST" enctype="multipart/form-data">
+                <div class="form-group">{{ render_field(form.name ,class_="form-control") }}</div>
+                <div class="form-group">{{ render_field(form.telpon ,class_="form-control") }}</div>
+                <div class="form-group">{{ render_field(form.alamat ,class_="form-control") }}</div>
+                <div class="form-group">{{ render_field(form.image ,class_="form-control") }}</div>
+                <p>
+                    <input type="submit" value="Submit" class="b-crud-tambah">
+                </p>
+            </form>
         </div>
-    </form>
+        <div class="column-right">
+            <img src="{{url_for('send_image', filename=image_names)}}" width="260px" height="400px">
+        </div>
+    </div>
+</div>
+{{gets}}
 {% endblock %}

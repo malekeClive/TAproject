@@ -2,46 +2,92 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>test absensi</title>
-    <script type="text/javascript" src="{{ url_for('static', filename='jquery-3.3.1.min.js') }}"></script>
-    <!-- <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"> -->
+
+    <!-- CSS -->
+    <link type="text/css" rel="stylesheet" media="screen" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fontawesome-free-5.1.0-web/css/solid.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fontawesome-free-5.1.0-web/css/fontawesome.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='datatable/DataTables-1.10.18/css/dataTables.bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='datatable/DataTables-1.10.18/css/jquery.dataTables.min.css') }}">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>TEST</h3>
+                <strong>TA</strong>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="{{ url_for('dashboard') }}">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('dataAbsensi') }}">
+                        <i class="fas fa-file"></i>
+                        Kelola Absensi
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('karyawanData') }}">
+                        <i class="fas fa-users"></i>
+                        Kelola Karyawan
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('dataAdmin') }}">
+                        <i class="fas fa-user-circle"></i>
+                        Admin
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled components">
+                <li>
+                    <span id="logout">
+                        <a href="/logout">
+                            <b>Logout</b>
+                        </a>
+                    </span>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg  navbar-light" style="background-color: #222f3e; ">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="b-crud-sidebar">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+                </div>
+            </nav>
+            {% include 'includes/_messages.html' %}            
+            {% block body %}{% endblock %}
+        </div>
+    </div>
+    <!-- <script type="text/javascript" src="{{ url_for('static', filename='jquery.js') }}"></script> -->
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='datatable/DataTables-1.10.18/js/dataTables.bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='lodash.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='immutable.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='axios.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='datatable/DataTables-1.10.18/js/jquery.dataTables.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
-</head>
-
-<body bgcolor="#f4f4f4">
-    {% include 'includes/_messages.html' %}
-    <div class="logo">
-        <div class="jdl">
-            <h1>ABSENKU</h1>
-        </div>
-    </div>
-    <div class="side-form">
-        <ul>
-            <li>
-                <a class="active" href="{{ url_for('dashboard') }}">Dashboard</a>
-            </li>
-            <li>
-                <a href="#">Kelola Absensi</a>
-            </li>
-            <li>
-                <a href="{{ url_for('dataKaryawan') }}">Kelola Karyawan</a>
-            </li>
-            <li>
-                <a href="#">Admin</a>
-            </li>
-        </ul>
-    </div>
-    <div class="topnav">
-        <span id="logout"><a href="/logout">Logout</a></span>
-    </div>
-    <div class="isi">
-        {% block body %}{% endblock %}
-    </div>
 </body>
 
 </html>
